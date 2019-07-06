@@ -78,30 +78,31 @@ user_uart.o: \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/nvs_flash/include/nvs.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/spi_flash/include/esp_partition.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/ledc.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_assert.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/gpio.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_types.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_intr_alloc.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/xtensa_api.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/include/soc/gpio_periph.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_struct.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_reg.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/periph_ctrl.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/event_groups.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/timers.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/task.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/uart.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/include/soc/uart_periph.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_caps.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_assert.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_struct.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_channel.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_intr_alloc.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/xtensa_api.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/periph_ctrl.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_types.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/gpio.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/include/soc/gpio_periph.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_struct.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_reg.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_system.h:
 
@@ -259,39 +260,11 @@ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/spi_flash/include/
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/ledc.h:
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/event_groups.h:
 
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/timers.h:
 
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_assert.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/gpio.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_types.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_rom/include/esp32/rom/gpio.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_intr_alloc.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/xtensa_api.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/include/soc/gpio_periph.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_struct.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_reg.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/periph_ctrl.h:
-
-C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/task.h:
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/uart.h:
 
@@ -301,9 +274,39 @@ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
 
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_assert.h:
+
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_struct.h:
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_channel.h:
 
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_intr_alloc.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/xtensa_api.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/periph_ctrl.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
+
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_types.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/driver/include/driver/gpio.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_rom/include/esp32/rom/gpio.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/include/soc/gpio_periph.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_struct.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_reg.h:
+
+C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
 /home/PURESUN/esp/ESP32_Develop/main/./user_uart.c:

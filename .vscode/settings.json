@@ -2,7 +2,8 @@
     "files.associations": {
         "freertos.h": "c",
         "esp_wifi.h": "c",
-        "uart.h": "c"
+        "uart.h": "c",
+        "ledc.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
