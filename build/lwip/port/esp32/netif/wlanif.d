@@ -6,7 +6,7 @@ port/esp32/netif/wlanif.o: \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/newlib/platform_include/sys/time.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/vfs/include/sys/ioctl.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_task.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/hello_world/build/include/sdkconfig.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/ESP32_Develop/build/include/sdkconfig.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
@@ -104,7 +104,7 @@ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/vfs/include/sys/io
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_task.h:
 
-C:/Developer/ESP32/msys32/home/PURESUN/esp/hello_world/build/include/sdkconfig.h:
+C:/Developer/ESP32/msys32/home/PURESUN/esp/ESP32_Develop/build/include/sdkconfig.h:
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 

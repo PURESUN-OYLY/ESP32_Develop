@@ -3,7 +3,9 @@
         "freertos.h": "c",
         "esp_wifi.h": "c",
         "uart.h": "c",
-        "ledc.h": "c"
+        "ledc.h": "c",
+        "esp_wifi_types.h": "c",
+        "wlanif.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
