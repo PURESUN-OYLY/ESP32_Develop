@@ -1,9 +1,9 @@
 user_uart.o: \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/hello_world/main/user_uart.c \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/ESP32_Develop/main/user_uart.c \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_system.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_err.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/Developer/ESP32/msys32/home/PURESUN/esp/hello_world/build/include/sdkconfig.h \
+ C:/Developer/ESP32/msys32/home/PURESUN/esp/ESP32_Develop/build/include/sdkconfig.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_attr.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
  C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include/esp_idf_version.h \
@@ -109,7 +109,7 @@ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_common/include
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Developer/ESP32/msys32/home/PURESUN/esp/hello_world/build/include/sdkconfig.h:
+C:/Developer/ESP32/msys32/home/PURESUN/esp/ESP32_Develop/build/include/sdkconfig.h:
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp32/include/esp_attr.h:
 
@@ -306,4 +306,4 @@ C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/soc/esp32/include/soc/uart_channel.h:
 
 C:/Developer/ESP32/msys32/home/PURESUN/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
-/home/PURESUN/esp/hello_world/main/./user_uart.c:
+/home/PURESUN/esp/ESP32_Develop/main/./user_uart.c:
