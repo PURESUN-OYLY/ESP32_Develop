@@ -5,7 +5,8 @@
         "uart.h": "c",
         "ledc.h": "c",
         "esp_wifi_types.h": "c",
-        "wlanif.h": "c"
+        "wlanif.h": "c",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

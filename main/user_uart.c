@@ -45,7 +45,7 @@ void uart2_rx_task();
 // void TaskTest();
 
 static esp_err_t event_handler(void *ctx, system_event_t *event);
-void Wifi_Start_AP();
+void WiFi_Start_AP();
 void WiFi_Start_STA();
 
 bool ECHO_FLAG = false;
@@ -76,6 +76,40 @@ void app_main()
 //         vTaskDelay(100);
 //     }
 // }
+
+void int2str(int num)
+{
+    char *temp;
+    temp = (char *)malloc(sizeof(char));
+    if (num < 0)
+    {
+        uart_write_bytes(UART_NUM_1, "-", 1);
+        num = -num;
+    }
+
+    if (num >= 10000)
+    {
+        *temp = num / 10000 + '0';
+        uart_write_bytes(UART_NUM_1, temp, 1);
+    }
+    if (num >= 1000)
+    {
+        *temp = num / 1000 % 10 + '0';
+        uart_write_bytes(UART_NUM_1, temp, 1);
+    }
+    if (num >= 100)
+    {
+        *temp = num / 100 % 10 + '0';
+        uart_write_bytes(UART_NUM_1, temp, 1);
+    }
+    if (num >= 10)
+    {
+        *temp = num / 100 % 10 + '0';
+        uart_write_bytes(UART_NUM_1, temp, 1);
+    }
+    *temp = num % 10 + '0';
+    uart_write_bytes(UART_NUM_1, temp, 1);
+}
 
 void uart_init(void)
 {
@@ -111,24 +145,62 @@ void uart1_rx_task()
     uint8_t *data = (uint8_t *)malloc(RX1_BUF_SIZE + 1);
     while (1)
     {
+        char *temp_str;
         //获取串口1接收的数据
         const int rxBytes = uart_read_bytes(UART_NUM_1, data, RX1_BUF_SIZE, 10 / portTICK_RATE_MS);
+        temp_str = (char *)malloc(sizeof(char) * (rxBytes + 1));
         if (rxBytes > 0)
         {
-            char *temp_str;
-            temp_str = (char *)malloc(sizeof(char) * (rxBytes + 1));
             strncpy(temp_str, (const char *)data, rxBytes);
-            // uart_write_bytes(UART_NUM_1, temp_str, rxBytes);
-            if (strcmp("Open Wifi AP\r\n", temp_str))
+            // uart_write_bytes(UART_NUM_1, temp_str, strlen(temp_str));
+            int2str(sizeof(temp_str));
+            int2str(sizeof(*temp_str));
+            if (strncmp(temp_str, "Open Wifi AP\r\n", rxBytes) == 0)
             {
                 uart_write_bytes(UART_NUM_1, "Opening WiFi AP...\r\n", strlen("Opening WiFi AP...\r\n"));
-                Wifi_Start_STA();
+                // WiFi_Start_AP();
+                tcpip_adapter_init();
+                ESP_ERROR_CHECK(esp_event_loop_init(event_handler, NULL));
+                wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+                ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+                wifi_config_t wifi_config = {
+                    .ap = {
+                        .ssid = AP_ID,
+                        .ssid_len = 0,
+                        /* 最多只能被4个station同时连接,这里设置为只能被一个station连接 */
+                        .max_connection = 1,
+                        .password = AP_PWD,
+                        .authmode = WIFI_AUTH_WPA_WPA2_PSK,
+                    },
+                };
+                ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_AP)); //Set WiFi mode as asscss point
+                ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_AP, &wifi_config));
+                ESP_ERROR_CHECK(esp_wifi_start());
             }
-            // else if (strcmp("Open Wifi\r\n", temp_str))
-            // {
-            //     uart_write_bytes(UART_NUM_1, "Opening WiFi...\r\n", strlen("Opening WiFi...\r\n"));
-            //     WiFi_Start_STA();
-            // }
+            else if (strncmp(temp_str, "Open Wifi STA\r\n", rxBytes) == 0)
+            {
+                uart_write_bytes(UART_NUM_1, "Opening WiFi...\r\n", strlen("Opening WiFi...\r\n"));
+                // WiFi_Start_STA();
+                tcpip_adapter_init();
+                wifi_event_group = xEventGroupCreate();
+                ESP_ERROR_CHECK(esp_event_loop_init(event_handler, NULL));
+                wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+                ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+                ESP_ERROR_CHECK(esp_wifi_set_storage(WIFI_STORAGE_RAM));
+                wifi_config_t wifi_config = {
+                    .sta = {
+                        .ssid = WIFI_SSID,    //要连接的热点
+                        .password = WIFI_PWD, //目标WiFi密码
+                    },
+                };
+                ESP_LOGI(TAG, "Setting WiFi configuration SSID %s...", wifi_config.sta.ssid);
+                ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+                ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
+                ESP_ERROR_CHECK(esp_wifi_start());
+            }
+            uart_write_bytes(UART_NUM_1,"Relase tem_str",14);
+            free(temp_str); //释放temp_str
+            int2str(sizeof(temp_str));
         }
     }
     free(data);
@@ -181,9 +253,9 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
     return ESP_OK;
 }
 
-void Wifi_Start_AP()
+void WiFi_Start_AP()
 {
-    ESP_ERROR_CHECK(nvs_flash_init());
+    // ESP_ERROR_CHECK(nvs_flash_init());
     tcpip_adapter_init();
     ESP_ERROR_CHECK(esp_event_loop_init(event_handler, NULL));
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
