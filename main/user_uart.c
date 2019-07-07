@@ -43,10 +43,18 @@ void uart1_rx_task();
 void uart2_rx_task();
 
 // void TaskTest();
+void Memory()
+{
+    while (1)
+    {
+        ESP_LOGI(TAG, "[APP] Free memory: %d bytes", esp_get_free_heap_size());
+        vTaskDelay(200);
+    }
+}
 
 static esp_err_t event_handler(void *ctx, system_event_t *event);
-void WiFi_Start_AP();
-void WiFi_Start_STA();
+static void WiFi_Start_AP();
+static void WiFi_Start_STA();
 
 bool ECHO_FLAG = false;
 
@@ -54,11 +62,13 @@ bool ECHO_FLAG = false;
 void app_main()
 {
     // TaskHandle_t testhandle;
+    TaskHandle_t Memory_remain;
     //串口初始化
     uart_init();
     ESP_ERROR_CHECK(nvs_flash_init());                                                           //初始化NVS存储器
     xTaskCreate(uart1_rx_task, "uart1_rx_task", 1024 * 2, NULL, configMAX_PRIORITIES, NULL);     //Create Task Uart 1
     xTaskCreate(uart2_rx_task, "uart2_rx_task", 1024 * 2, NULL, configMAX_PRIORITIES - 1, NULL); //Create Task Uart 2
+    xTaskCreate(Memory, "Memory remain", 2048, NULL, configMAX_PRIORITIES - 2, &Memory_remain);
     //xTaskCreate(TaskTest, "TaskTest", 2048, NULL, configMAX_PRIORITIES - 2, &testhandle);        //Creat Uart Test Task
     //Wifi_Start_AP();                                                                             //Open WiFi as a AP
     //WiFi_Start_STA();       //开启Station模式
@@ -153,8 +163,8 @@ void uart1_rx_task()
         {
             strncpy(temp_str, (const char *)data, rxBytes);
             // uart_write_bytes(UART_NUM_1, temp_str, strlen(temp_str));
-            int2str(sizeof(temp_str));
-            int2str(sizeof(*temp_str));
+            // int2str(sizeof(temp_str));
+            // int2str(sizeof(*temp_str));
             if (strncmp(temp_str, "Open Wifi AP\r\n", rxBytes) == 0)
             {
                 uart_write_bytes(UART_NUM_1, "Opening WiFi AP...\r\n", strlen("Opening WiFi AP...\r\n"));
@@ -198,7 +208,7 @@ void uart1_rx_task()
                 ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
                 ESP_ERROR_CHECK(esp_wifi_start());
             }
-            uart_write_bytes(UART_NUM_1,"Relase tem_str",14);
+            uart_write_bytes(UART_NUM_1, "Relase tem_str", 14);
             free(temp_str); //释放temp_str
             int2str(sizeof(temp_str));
         }
@@ -253,7 +263,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
     return ESP_OK;
 }
 
-void WiFi_Start_AP()
+static void WiFi_Start_AP()
 {
     // ESP_ERROR_CHECK(nvs_flash_init());
     tcpip_adapter_init();
@@ -275,7 +285,7 @@ void WiFi_Start_AP()
     ESP_ERROR_CHECK(esp_wifi_start());
 }
 
-void WiFi_Start_STA()
+static void WiFi_Start_STA()
 {
     tcpip_adapter_init();
     wifi_event_group = xEventGroupCreate();
